@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+    <plugin id="cordova-plugin-keychain-uuid"
+        version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <name>cordova-plugin-keychain-uuid</name>
+        <description>A cordova plugin for getting uuid from ios keychain</description>
+        <license>MIT</license>
+        <keywords>cordova,keychain,uuid,ios</keywords>
+        <repo>https://github.com/jasonz1987/cordova-plugin-keychain-uuid.git</repo>
+        <issue>https://github.com/jasonz1987/cordova-plugin-keychain-uuid/issues</issue>
+        <js-module name="KeychainUUID" src="www/CDVKeychainUUID.js">
+            <clobbers target="KeychainUUID" />
+        </js-module>
+        <platform name="ios">
+        	<config-file parent="/*" target="config.xml">
+	            <feature name="KeychainUUID">
+	                <param name="ios-package" value="CDVKeychainUUID" />
+	             </feature>
+            </config-file>
+            <header-file src="src/ios/CDVKeychainUUID.h" />
+            <source-file src="src/ios/CDVKeychainUUIDA.m" />
+             <header-file src="src/ios/KeychainHelper.h" />
+            <source-file src="src/ios/KeychainHelper.m" />
+        </platform>
+</plugin>
