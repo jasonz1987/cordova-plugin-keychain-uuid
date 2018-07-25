@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-keychain-uuid",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": " crodova plugin for getting uuid from keychain",
   "main": "index.js",
   "scripts": {

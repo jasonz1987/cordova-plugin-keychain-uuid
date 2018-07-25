@@ -2,7 +2,7 @@
 
 通过UUID+KEYCHAIN的方式获取ios的唯一设备id.
 
-如果使用AdSupport,请尝试另外一种获取方式：
+如果使用IDFA,请尝试另外一种获取方式：
 
 https://github.com/jasonz1987/cordova-plugin-keychain-idfa
 
@@ -24,6 +24,8 @@ https://github.com/jasonz1987/ionic-keychain-uuid-demo
 ```
 cordova plugin add cordova-plugin-keychain-uuid
 ```
+
+
 
 # 调用
 
@@ -56,6 +58,15 @@ KeychainUUID.deleteDeviceID((id)=>{
 ```
 
 *此处的key是用来标识keychain存储的键值，根据自己定义。*
+
+
+# 注意事项
+
+由于KEYCHAIN默认是存放在私有区内的，如果想要在不同APP（同一开发者账号下）之间内数据共享，需要开启
+
+`KEYCHAIN SHARE`, 具体设置：Xcode->Capabilities->Keychain Sharing，添加相同的group即可。
+
+![截图](screenshot-1.png)
 
 
 # 赞赏
