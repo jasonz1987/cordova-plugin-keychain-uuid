@@ -42,14 +42,14 @@ NSString *key = @"com.jason-z.test.uuid";
     }
 
     //  read cache
-    NSString *deviceID = [CDVKeychainIDFA getUUIDString];
+    NSString *deviceID = [CDVKeychainUUID getUUIDString];
     if (kIsStringValid(deviceID))
     {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:deviceID];
     } else {
 
-            deviceID = [[CDVKeychainIDFA randomUUID] lowercaseString];
-            [CDVKeychainIDFA setUUIDString:deviceID];
+            deviceID = [[CDVKeychainUUID randomUUID] lowercaseString];
+            [CDVKeychainUUID setUUIDString:deviceID];
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:deviceID];
 
     }
