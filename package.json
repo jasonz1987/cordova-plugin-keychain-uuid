@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-keychain-uuid",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": " crodova plugin for getting uuid from keychain",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,9 @@
     "keychain",
     "uuid",
     "ios",
-    "cordova"
+    "cordova",
+    "deviceid",
+    "uniqueid"
   ],
   "author": "jason.z",
   "license": "ISC",
