@@ -1,37 +1,39 @@
-# 项目说明
+# cordova-plugin-keychain-uuid
 
-通过UUID+KEYCHAIN的方式获取ios的唯一设备id.
+get iOS unique device id by **KEYCHAIN+UUID**,
 
-如果使用IDFA,请尝试另外一种获取方式：
+you can also choose another way : [KEYCHAIN+IDFA](https://github.com/jasonz1987/cordova-plugin-keychain-idfa)
 
-https://github.com/jasonz1987/cordova-plugin-keychain-idfa
-
-
-
-具体文档说明请参考：http://www.jason-z.com/post/22
+more info visit：http://www.jason-z.com/post/22
 
 
 
-# DEMO
-
-
-https://github.com/jasonz1987/ionic-keychain-uuid-demo
+[中文文档](REAEDME_CN.md)
 
 
 
-# 安装
+# Example
 
-```
+
+[Ionic3 Demo](https://github.com/jasonz1987/ionic-keychain-uuid-demo)
+
+
+
+# Install
+
+```bash
 cordova plugin add cordova-plugin-keychain-uuid
 ```
 
 
 
-# 调用
+# Usage
 
-## 从keychain中获取设备ID
 
-```
+
+### get device id from keychain
+
+```javascript
 var args = {
   'key':'com.jason-z.test.uuid'
 };
@@ -43,9 +45,11 @@ KeychainUUID.getDeviceID((id)=>{
 })
 ```
 
-##  从keychain中删除设备ID
 
-```
+
+###  delete device id from keychain
+
+```javascript
 var args = {
   'key':'com.jason-z.test.uuid'
 };
@@ -57,21 +61,26 @@ KeychainUUID.deleteDeviceID((id)=>{
 })
 ```
 
-*此处的key是用来标识keychain存储的键值，根据自己定义。*
+*you can custom **key** value by your own.*
 
 
-# 注意事项
 
-由于KEYCHAIN默认是存放在私有区内的，如果想要在不同APP（同一开发者账号下）之间内数据共享，需要开启
 
-`KEYCHAIN SHARE`, 具体设置：Xcode->Capabilities->Keychain Sharing，添加相同的group即可。
+# Warning
+
+the keychain data are stored privately by default. if you want share your data in different app (in same account),you must open `KEYCHAIN_SHARE`. you can do it by these steps.
+
+open `Xcode->Capabilities->Keychain Sharing`, then add same group in your apps.
 
 ![截图](screenshot-1.png)
 
 
-# 赞赏
 
-如果我的插件帮助到了你，欢迎赞赏。
+# Donate
 
-![赞赏](donate.png)
+If this project help you reduce time to develop, you can give me a cup of coffee :)
+
+
+
+[![paypal](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/jasonz1987/6.66)
 
